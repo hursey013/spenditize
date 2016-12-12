@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "Spenditize",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": ["https://users.debitize.com/users/balances/"],
+      "js": ["content.js"]
+    }
+  ]
+}
