@@ -26,7 +26,6 @@ document.querySelector('.dashboard > .row').insertAdjacentHTML('beforeend',
   '<div class="panel-heading"><h3 class="panel-title">Safe to Spend</h3></div>' +
   '<div class="panel-body text-nowrap bg-' + (spend > 0 ? "success" : "danger") + '">' +
   formatter.format(spend) +
-  // Math.abs(spend).toFixed(2) +
   '</div>' +
   '</div></div>');
 
