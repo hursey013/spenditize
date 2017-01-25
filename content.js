@@ -21,7 +21,7 @@ var formatter = new Intl.NumberFormat('en-US', {
 });
 
 // Insert new spend column into dashboard
-document.querySelector('.dashboard > .row').insertAdjacentHTML('beforeend',
+document.querySelector('.dashboard > .row > div:nth-child(2)').insertAdjacentHTML('afterend',
   '<div class="col-md-4"><div class="panel panel-default">' +
   '<div class="panel-heading"><h3 class="panel-title">Safe to Spend</h3></div>' +
   '<div class="panel-body text-nowrap bg-' + (spend > 0 ? "success" : "danger") + '">' +
