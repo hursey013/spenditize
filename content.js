@@ -3,15 +3,8 @@ var checking = document.querySelector('#balances > div:nth-child(2) .media-right
 var debitize = document.querySelector('#balances > div:nth-child(3) .media-right:last-child h4');
 var credit = document.querySelector('#balances > div:nth-child(4) .media-right:last-child h4');
 
-// Adjust width of dashboard columns
-for (let i = 0; i < withdrawals.length; ++i) {
-  withdrawals[i].parentNode.parentNode.className = 'col-md-4';
-}
-
-// Subtract the balance of checking & debitize account from credit balance
+// Subtract the credit balance from the balance of the checking & debitize accounts
 var spend = (getNumber(checking) + getNumber(debitize)) - getNumber(credit);
-
-console.log(getNumber(checking));
 
 // Currency formatting
 var formatter = new Intl.NumberFormat('en-US', {
@@ -19,6 +12,11 @@ var formatter = new Intl.NumberFormat('en-US', {
   currency: 'USD',
   minimumFractionDigits: 2,
 });
+
+// Adjust width of dashboard columns
+for (let i = 0; i < withdrawals.length; ++i) {
+  withdrawals[i].parentNode.parentNode.className = 'col-md-4';
+}
 
 // Insert new spend column into dashboard
 document.querySelector('.dashboard > .row > div:nth-child(2)').insertAdjacentHTML('afterend',
