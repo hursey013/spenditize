@@ -1,7 +1,7 @@
 var withdrawals = document.querySelectorAll('.dashboard .bg-success');
-var checking = document.querySelector('#balances > div:nth-child(2) .media-right h4');
-var debitize = document.querySelector('#balances > div:nth-child(3) .media-right h4');
-var credit = document.querySelector('#balances > div:nth-child(4) .media-right h4');
+var checking = document.querySelector('#balances > div:nth-child(2) .media-right:last-child h4');
+var debitize = document.querySelector('#balances > div:nth-child(3) .media-right:last-child h4');
+var credit = document.querySelector('#balances > div:nth-child(4) .media-right:last-child h4');
 
 // Adjust width of dashboard columns
 for (let i = 0; i < withdrawals.length; ++i) {
@@ -10,6 +10,8 @@ for (let i = 0; i < withdrawals.length; ++i) {
 
 // Subtract the balance of checking & debitize account from credit balance
 var spend = (getNumber(checking) + getNumber(debitize)) - getNumber(credit);
+
+console.log(getNumber(checking));
 
 // Currency formatting
 var formatter = new Intl.NumberFormat('en-US', {
