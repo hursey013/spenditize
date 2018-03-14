@@ -1,10 +1,12 @@
 var withdrawals = document.querySelectorAll('.dashboard .bg-success');
 var checking = document.querySelector('#balances > div:nth-child(2) .media-right:last-child h4');
 var debitize = document.querySelector('#balances > div:nth-child(3) .media-right:last-child h4');
-var credit = document.querySelector('#balances > div:nth-child(4) .media-right:last-child h4');
+var credit = document.querySelector('#balances > div:nth-child(5) .media-right:last-child h4');
+var pending = document.querySelector('.dashboard > .row > div:first-child .panel-body');
+var next = document.querySelector('.dashboard > .row > div:nth-child(2) .panel-body');
 
 // Subtract the credit balance from the balance of the checking & debitize accounts
-var spend = (getNumber(checking) + getNumber(debitize)) - getNumber(credit);
+var spend = (getNumber(checking) + getNumber(debitize)) - getNumber(credit) - getNumber(pending) - getNumber(next);
 
 // Currency formatting
 var formatter = new Intl.NumberFormat('en-US', {
